@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مثلث یاب</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Shabnam';
+            src: url('../Fonts/Shabnam.ttf') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Shabnam', sans-serif;
+        }
+        .dropdown-item {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body class="bg-cyan-600">
+    <nav class="bg-gray-300 text-gray-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1>
+                <a href="../index.html">
+                    <img src="../Photo/Logo.svg" class="w-8 max-w-full">
+                </a>
+            </h1>
+            <div class="hidden md:flex space-x-5">
+
+                <div class="relative">
+                    <button class="hover:text-gray-500 flex items-center" onclick="toggleDropdown('about-dropdown-desktop')">
+                        انتخاب رشته
+                        <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="about-dropdown-desktop" class="hidden absolute bg-gray-300 p-2 mt-2 rounded w-32">
+                        <a href="../Major-Selection/Mathematics.html" class="block text-gray-900 dropdown-item">ریاضی</a>
+                        <a href="../Major-Selection/Science.html" class="block text-gray-900 dropdown-item">تجربی</a>
+                        <a href="../Major-Selection/Humanities.html" class="block text-gray-900 dropdown-item">انسانی</a>
+                    </div>
+                </div>
+
+
+                <!-- New Dropdown Menu 1 -->
+
+               
+                            <div class="relative">
+                    <button class="hover:text-gray-500 flex items-center" onclick="toggleDropdown('new-dropdown-1')">
+                        محاسبه گر
+                        <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="new-dropdown-1" class="hidden absolute bg-gray-300 p-2 mt-2 rounded w-32">
+                        <a href="Moadel.html" class="block text-gray-900 dropdown-item">محاسبه معدل</a>
+                        <a href="KMM-BMM.html" class="block text-gray-900 dropdown-item">ک.م.م و ب.م.م</a>
+
+                    </div>
+                </div>
+                <!-- New Dropdown Menu 2 -->
+                <div class="relative">
+                    <button class="hover:text-gray-500 flex items-center" onclick="toggleDropdown('new-dropdown-3')">
+                        آموزشی
+                        <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="new-dropdown-3" class="hidden absolute bg-gray-300 p-2 mt-2 rounded w-32">
+
+                    </div>
+                </div>
+
+                <!-- New Dropdown Menu 3 (درس‌ها) -->
+                <div class="relative">
+                    <button class="hover:text-gray-500 flex items-center" onclick="toggleDropdown('new-dropdown-2')">
+                        پایه تحصیلی
+                        <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="new-dropdown-2" class="hidden absolute bg-gray-300 p-2 mt-2 rounded w-32">
+                        <a href="../7/7.html" class="block text-gray-900 dropdown-item">هفتم</a>
+                        <a href="../8/8.html" class="block text-gray-900 dropdown-item">هشتم</a>
+                        <a href="../9/9.html" class="block text-gray-900 dropdown-item">نهم</a>
+                    </div>
+                </div>
+                
+                <a href="../index.html" class="hover:text-gray-500">خانه</a>
+
+            </div>
+            <button class="md:hidden" id="menu-btn">
+                <svg id="menu-icon" class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="hidden md:hidden flex flex-col items-center bg-gray-300 py-4 space-y-4" id="mobile-menu">
+            <!-- خانه first in mobile menu -->
+            <a href="../index.html" class="text-gray-900 text-lg">خانه</a>
+            
+            <!-- New Dropdown Menu 1 in mobile -->
+
+            <div class="relative">
+                <button class="text-gray-900 text-lg flex items-center" onclick="toggleDropdown('new-dropdown-2-mobile')">
+                    پایه تحصیلی
+                    <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="new-dropdown-2-mobile" class="hidden flex flex-col bg-gray-300 p-2 mt-2 rounded w-32">
+                    <a href="../7/7.html" class="text-gray-900 dropdown-item">هفتم</a>
+                    <a href="../8/8.html" class="text-gray-900 dropdown-item">هشتم</a>
+                    <a href="../9/9.html" class="text-gray-900 dropdown-item">نهم</a>
+                </div>
+            </div>
+
+            <!-- New Dropdown Menu 2 in mobile -->
+            <div class="relative">
+                <button class="text-gray-900 text-lg flex items-center" onclick="toggleDropdown('new-dropdown-1-mobile')">
+                    آموزشی
+                    <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="new-dropdown-1-mobile" class="hidden flex flex-col bg-gray-300 p-2 mt-2 rounded w-32">
+                </div>
+            </div>
+            <!-- New Dropdown Menu 3 in mobile -->
+            <div class="relative">
+                <button class="text-gray-900 text-lg flex items-center" onclick="toggleDropdown('new-dropdown-3-mobile')">
+                    محاسبه گر
+                    <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="new-dropdown-3-mobile" class="hidden flex flex-col bg-gray-300 p-2 mt-2 rounded w-32">
+                    <a href="Moadel.html" class="text-gray-900 dropdown-item">محاسبه معدل</a>
+                    <a href="KMM-BMM.html" class="text-gray-900 dropdown-item">ک.م.م و ب.م.م</a>
+                </div>
+            </div>
+
+
+            <div class="relative">
+                <button class="text-gray-900 text-lg flex items-center" onclick="toggleDropdown('new-dropdown-4-mobile')">
+                    انتخاب رشته
+                    <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="new-dropdown-4-mobile" class="hidden flex flex-col bg-gray-300 p-2 mt-2 rounded w-32">
+                    <a href="../Major-Selection/Mathematics.html" class="text-gray-900 dropdown-item">ریاضی</a>
+                    <a href="../Major-Selection/Science.html" class="text-gray-900 dropdown-item">تجربی</a>
+                    <a href="../Major-Selection/Humanities.html" class="text-gray-900 dropdown-item">انسانی</a>
+                </div>
+            </div>
+
+
+        </div>
+    </nav>
+
+
+                <div class="text-center mt-10">
+                    <p class="text-7xl">روش مــطــالــعــاتــی</p>
+                    <br>
+                    <p>روش مورد نظرتت رو پیدا کن</p>
+                </div>
+
+                <div class="flex justify-center items-center min-h-screen ">
+                    <div class="max-w-sm rounded overflow-hidden shadow-lg text-center">
+                      <img class="w-full" src="../Photo/PQ4R.png" alt="Sunset in the mountains">
+                      <div class="px-4 py-3">
+                        <div class="font-bold text-xl mb-2">Preview, Question, Read, Reflect, Recite, Review</div>
+                        <p class="text-gray-700 text-base">
+
+<br>مرور سریع مطالب برای درک کلی
+<br>طرح پرسش از محتوای مطالعه 
+<br>مطالعه دقیق متن
+<br>تحلیل و ارتباط دادن مطالب جدید با دانش قبلی
+<br>بیان مطالب به زبان خود
+<br>مرور مطالب برای تثبیت یادگیری
+
+
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  
+
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const allDropdowns = document.querySelectorAll('.absolute');
+            
+            allDropdowns.forEach((d) => {
+                if (d.id !== id) {
+                    d.classList.add('hidden');
+                }
+            });
+            dropdown.classList.toggle('hidden');
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.absolute');
+            dropdowns.forEach(function(dropdown) {
+                if (!dropdown.contains(event.target) && !event.target.closest('button')) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>

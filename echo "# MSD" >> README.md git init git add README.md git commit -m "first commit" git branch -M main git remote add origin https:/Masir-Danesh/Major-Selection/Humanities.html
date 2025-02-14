@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <link rel="icon" type="image/png" href="logo.svg">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رشته انسانی</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: 'Shabnam';
+            src: url('../Fonts/Shabnam.ttf') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        body {
+            font-family: 'Shabnam', sans-serif;
+        }
+        .dropdown-item {
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-cyan-600">
+    <nav class="bg-gray-300 text-gray-800 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1>
+                <a href="index.html">
+                    <img src="../Photo/Logo.svg" class="w-8 max-w-full">
+                </a>
+            </h1>
+          
+  <div class="hidden md:flex space-x-5">
+                <a href="../more/about.html" class="hover:text-gray-500">درباره من</a>
+                <div class="relative">
+                    <button class="hover:text-gray-500 flex items-center" onclick="toggleDropdown('about-dropdown-desktop')">
+                        انتخاب رشته
+                        <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="about-dropdown-desktop" class="hidden absolute bg-gray-300 p-2 mt-2 rounded w-32">
+                        <a href="Mathematics.html" class="block text-gray-900 dropdown-item">ریاضی</a>
+                        <a href="Science.html" class="block text-gray-900 dropdown-item">تجربی</a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <button class="hover:text-gray-500 flex items-center" onclick="toggleDropdown('new-dropdown-1')">
+                        محاسبه گر
+                        <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="new-dropdown-1" class="hidden absolute bg-gray-300 p-2 mt-2 rounded w-32">
+                        <a href="../more/Moadel.html" class="block text-gray-900 dropdown-item">محاسبه معدل</a>
+                        <a href="../more/KMM-BMM.html" class="block text-gray-900 dropdown-item">ک.م.م و ب.م.م</a>
+                        <a href="../more/Triangle-Finder.html" class="block text-gray-900 dropdown-item">مثلث یاب</a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <button class="hover:text-gray-500 flex items-center" onclick="toggleDropdown('new-dropdown-3')">
+                        آموزشی
+                        <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="new-dropdown-3" class="hidden absolute bg-gray-300 p-2 mt-2 rounded w-32">
+                        <a href="../more/Reading.html" class="block text-gray-900 dropdown-item">روش مطالعاتی</a>
+
+                    </div>
+                </div>
+
+                <a href="../index.html" class="hover:text-gray-500">خانه</a>
+            </div>
+            <button class="md:hidden" id="menu-btn">
+                <svg id="menu-icon" class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="hidden md:hidden flex flex-col items-center bg-gray-300 py-4 space-y-4" id="mobile-menu">
+            <a href="../index.html" class="text-gray-900 text-lg">خانه</a>
+           
+            <div class="relative">
+                <button class="text-gray-900 text-lg flex items-center" onclick="toggleDropdown('new-dropdown-1-mobile')">
+                    آموزشی
+                    <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="new-dropdown-1-mobile" class="hidden flex flex-col bg-gray-300 p-2 mt-2 rounded w-32">
+                    <a href="../more/Reading.html" class="text-gray-900 dropdown-item">روش مطالعاتی</a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <button class="text-gray-900 text-lg flex items-center" onclick="toggleDropdown('new-dropdown-3-mobile')">
+                    محاسبه گر
+                    <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="new-dropdown-3-mobile" class="hidden flex flex-col bg-gray-300 p-2 mt-2 rounded w-32">
+                    <a href="../more/Moadel.html" class="text-gray-900 dropdown-item">محاسبه معدل</a>
+                    <a href="../more/KMM-BMM.html" class="text-gray-900 dropdown-item">ک.م.م و ب.م.م</a>
+                    <a href="../more/Triangle-Finder.html" class="text-gray-900 dropdown-item">مثلث یاب</a>
+                </div>
+            </div>
+
+            <div class="relative">
+                <button class="text-gray-900 text-lg flex items-center" onclick="toggleDropdown('new-dropdown-4-mobile')">
+                    انتخاب رشته
+                    <svg class="w-4 h-4 ml-2 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div id="new-dropdown-4-mobile" class="hidden flex flex-col bg-gray-300 p-2 mt-2 rounded w-32">
+                    <a href="Mathematics.html" class="text-gray-900 dropdown-item">ریاضی</a>
+                    <a href="Science.html" class="text-gray-900 dropdown-item">تجربی</a>
+                </div>
+            </div>
+
+            <a href="../more/about.html" class="text-gray-900 text-lg">درباره من</a>
+        </div>
+    </nav>
+    <br>
+    <div class="text-center mt-10">
+        <p class="text-4xl">رشته های دانــشگاهــی </p>
+        <br>
+        <p class="text-6xl">انــسـانــــی</p>
+        <br>
+    </div>
+   
+    <br>
+    <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+        <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+        <div>
+        <div class="text-xl font-medium text-black dark:text-white text-center">روانشناسی </div>
+        <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Psychology) </p>
+        </div>
+    </div>  
+    <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">جامعه شناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Sociology) </p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">انسان شناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی:(Anthropology)</p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">زبان شناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Linguistics) </p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">جرم شناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Criminology) </p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">موسیقی شناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Musicology) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">آب و هواشناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Climatology) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مردم شناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی:(Anthropology) </p>
+            </div>
+        </div> 
+                 <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">باستان شناسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی:(Archaeology) </p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">اقتصاد</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Economics) </p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">فلسفه</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (philosophy) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">حقوق</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Law) </p>
+            </div>
+        </div>   
+       
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">حسابداری</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Accounting) </p>
+            </div>
+        </div>
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">تاریخ</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (History) </p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">تاریخ هنر</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Art History) </p>
+            </div>
+        </div>  
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">علوم سیاسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Political Science) </p>
+            </div>
+        </div>    
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">علوم قضایی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Judicial Sciences) </p>
+            </div>
+        </div>
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">علوم اجتماعی </div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                 <br>(Social Sciences) </p>
+            </div>
+        </div>
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">علوم تربیتی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : 
+                <br>(Educational Sciences) </p>
+            </div>
+        </div>
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت دولتی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+               <br>  (Public Administration) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت صنعتی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+             <br>    (Industrial Management) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت مالی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Financial Management) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت بیمه</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Insurance Management) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت فرهنگی و هنری</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Cultural and Art Management) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت جهانگردی	</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Tourism Management) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت امور گمرکی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Customs Management) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مدیریت منابع انسانی	</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Human Resource Management) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">زبان و ادبیات فارسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Persian Language and Literature) </p>
+            </div>
+        </div>
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">آموزش زبان انگلیسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Teaching English as a Foreign Language (TEFL)) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مترجمی زبان انگلیسی	</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (English Translation) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">زبان و ادبیات فرانسه</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (French Language and Literature) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">زبان و ادبیات آلمانی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (German Language and Literature) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">زبان و ادبیات ترکی استانبولی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Turkish Language and Literature) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">زبان و ادبیات روسی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Russian Language and Literature) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">حکمت اسلامی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی:
+                <br>(Islamic Wisdom) </p>
+        </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">فقه و مبانی حقوق اسلامی	</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Islamic Jurisprudence and Law) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">الهیات و معارف اسلامی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Theology and Islamic Studies) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">ادیان و عرفان</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Religions and Mysticism) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">ادیان و عرفان</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Religions and Mysticism) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">روابط بین‌الملل</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (International Relations) </p>
+            </div>
+        </div>         <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مطالعات منطقه‌ای</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Regional Studies) </p>
+            </div>
+        </div> 
+        <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مددکاری اجتماعی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Social Work) </p>
+            </div>
+        </div>         <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">مشاوره و راهنمایی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Counseling and Guidance) </p>
+            </div>
+        </div>         <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">برنامه‌ریزی شهری و روستایی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Urban and Rural Planning) </p>
+            </div>
+        </div>         <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">کتابداری و اطلاع‌رسانی	</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Library and Information Science) </p>
+            </div>
+        </div>         <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">روزنامه‌نگاری</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی : (Journalism) </p>
+            </div>
+        </div>         <br>
+        <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+            <img class="size-20 shrink-0" src="Humanities.png" alt="" />
+            <div>
+            <div class="text-xl font-medium text-black dark:text-white text-center">ارتباطات اجتماعی</div>
+            <p class="text-gray-500 dark:text-gray-400" >معادل زبان انگلیسی :
+                <br> (Social Communications) </p>
+            </div>
+        </div>    
+             <br>
+      
+    <script>
+
+
+const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            const allDropdowns = document.querySelectorAll('.absolute');
+            
+            allDropdowns.forEach((d) => {
+                if (d.id !== id) {
+                    d.classList.add('hidden');
+                }
+            });
+            dropdown.classList.toggle('hidden');
+        }
+
+        document.addEventListener('click', function(event) {
+            const dropdowns = document.querySelectorAll('.absolute');
+            dropdowns.forEach(function(dropdown) {
+                if (!dropdown.contains(event.target) && !event.target.closest('button')) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+        });
+
+    </script>
+    
+</body>
+</html>
